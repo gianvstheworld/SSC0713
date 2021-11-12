@@ -19,16 +19,18 @@ void initPopulation(){ // cria população
 
 // essa função que torna o AG pesado, então quanto melhor ela está melhor o AG ficará
 void fitnessFunction(){
-    float aux, function;
+    float aux0, aux1, function;
 
 	printf("Generation %d\n",gen);
 
-    for(int i = 0; 1 <= TAMPOP; i++){
-        aux = crom[i];
-        float y = aux;
+    for(int i = 0; i < TAMPOP; i++){
+        aux0 = crom[i];
+        float aux1 = aux0;
 
-        if(aux > 500)
-            y = (2*cos(0.039*aux) + 5*sin(0.05*aux) + 0.5*cos(0.01*aux))*10+500;
+        if(aux0 > 500)
+            aux1 = (2*cos(0.039*aux0) + 5*sin(0.05*aux0) + 0.5*cos(0.01*aux0))*10+500;
+
+        fit[i] = aux1;
 
         printf("\tFitness %d - Cromossomo %f = %f\n", i, crom[i], fit[i]);
     }
