@@ -69,12 +69,16 @@ void selection(){
 
 int main(){
 
+    int aux;
+
     srand(time(NULL));
 
-    initPopulation();
-    fitnessFunction();
-    selection();
-    gen++;
+    for(aux = 0; aux < 10; aux++){
+        initPopulation();
+        fitnessFunction();
+        selection();
+        gen++;
+    }
 
     return 0;
 }
